@@ -26,6 +26,7 @@
     "bash-match": "^1.0.2",
     "fill-range": "^6.0.0",
     "gulp-format-md": "^1.0.0",
+    "micromatch": "^3.1.10",
     "minimatch": "^3.0.4",
     "minimist": "^1.2.0",
     "mocha": "^3.5.3",
