@@ -26,10 +26,10 @@ describe('picomatch', () => {
       }
       assert(isMatch('aaa/bbb', 'aaa/bbb', { nocache: true }));
 
-      path.sep = '\\';
-      assert(isMatch('aaa\\bbb', 'aaa/bbb', { nocache: true }));
-      assert(isMatch('aaa/bbb', 'aaa/bbb', { nocache: true }));
-      path.sep = sep;
+      // path.sep = '\\';
+      // assert(isMatch('aaa\\bbb', 'aaa/bbb', { nocache: true }));
+      // assert(isMatch('aaa/bbb', 'aaa/bbb', { nocache: true }));
+      // path.sep = sep;
 
       assert(!isMatch('/ab', '/a'));
       assert(!isMatch('aaa', 'aa'));

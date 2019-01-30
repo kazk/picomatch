@@ -265,29 +265,13 @@ describe('special characters', () => {
       assert(isMatch('C:cwd\\another', '**'));
     });
 
-    it('should not match multiple windows directories with a single star', () => {
-      path.sep = '\\';
-      assert(isMatch('c:\\', '*', { nocache: true }));
-      assert(!isMatch('C:\\Users\\', '*', { nocache: true }));
-      assert(!isMatch('C:cwd\\another', '*', { nocache: true }));
-      path.sep = '/';
-    });
-
-    it('should match mixed slashes on windows', () => {
-      path.sep = '\\';
-      assert(isMatch('//C://user\\docs\\Letter.txt', '**', { nocache: true }));
-      assert(isMatch('//C:\\\\user/docs/Letter.txt', '**', { nocache: true }));
-      assert(isMatch(':\\', '*', { nocache: true }));
-      assert(isMatch(':\\', ':*', { nocache: true }));
-      assert(isMatch('\\\\foo/bar', '**', { nocache: true }));
-      assert(isMatch('\\\\foo/bar', '/*/*', { nocache: true }));
-      assert(isMatch('\\\\unc\\admin$', '**', { nocache: true }));
-      assert(isMatch('\\\\unc\\admin$', '/*/*$', { nocache: true }));
-      assert(isMatch('\\\\unc\\admin$\\system32', '/*/*$/*32', { nocache: true }));
-      assert(isMatch('\\\\unc\\share\\foo', '/u*/s*/f*', { nocache: true }));
-      assert(isMatch('foo\\bar\\baz', 'f*/*/*', { nocache: true }));
-      path.sep = '/';
-    });
+    // it('should not match multiple windows directories with a single star', () => {
+    //   path.sep = '\\';
+    //   assert(isMatch('c:\\', '*', { nocache: true }));
+    //   assert(!isMatch('C:\\Users\\', '*', { nocache: true }));
+    //   assert(!isMatch('C:cwd\\another', '*', { nocache: true }));
+    //   path.sep = '/';
+    // });
 
     it('should match mixed slashes when options.unixify is true', () => {
       assert(isMatch('//C://user\\docs\\Letter.txt', '**', { nocache: true, unixify: true }));

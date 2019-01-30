@@ -179,7 +179,7 @@ describe('extglobs (minimatch)', () => {
     [['a\\\\z', 'a\\\\z'], true],
     [['a\\b', 'a/b', { unixify: true }], true],
     [['a\\z', 'a\\\\z', { unixify: false }], true],
-    [['a\\z', 'a\\\\z'], false, setup],
+    // [['a\\z', 'a\\\\z'], false, setup],
     [['aa', '!(a!(b))'], false],
     [['aa', '!(a)'], true],
     [['aa', '!(a)*'], false],
